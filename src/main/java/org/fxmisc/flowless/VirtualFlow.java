@@ -2,6 +2,7 @@ package org.fxmisc.flowless;
 
 import java.util.Optional;
 import java.util.function.Function;
+import java.util.logging.Logger;
 
 import javafx.collections.ObservableList;
 import javafx.geometry.Bounds;
@@ -92,6 +93,7 @@ public class VirtualFlow<T, C extends Cell<T, ?>> extends Region implements Virt
 
         // scroll content by mouse scroll
         this.addEventHandler(ScrollEvent.ANY, se -> {
+            Logger.getGlobal().fine(() -> se.toString());
             scrollXBy(-se.getDeltaX());
             scrollYBy(-se.getDeltaY());
             se.consume();

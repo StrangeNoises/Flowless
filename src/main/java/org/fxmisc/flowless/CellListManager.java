@@ -2,6 +2,7 @@ package org.fxmisc.flowless;
 
 import java.util.Optional;
 import java.util.function.Function;
+import java.util.logging.Logger;
 
 import javafx.collections.ObservableList;
 import javafx.scene.Node;
@@ -117,6 +118,7 @@ final class CellListManager<T, C extends Cell<T, ?>> {
      * and push them ourselves directly to the given owner.
      */
     private void pushScrollEvent(ScrollEvent se) {
+        Logger.getGlobal().fine(() -> se.toString());
         owner.fireEvent(se);
         se.consume();
     }
