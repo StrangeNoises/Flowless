@@ -93,7 +93,7 @@ public class VirtualFlow<T, C extends Cell<T, ?>> extends Region implements Virt
 
         // scroll content by mouse scroll
         this.addEventHandler(ScrollEvent.ANY, se -> {
-            Logger.getGlobal().fine(() -> se.toString());
+            Logger.getGlobal().fine(se::toString);
             scrollXBy(-se.getDeltaX());
             scrollYBy(-se.getDeltaY());
             se.consume();

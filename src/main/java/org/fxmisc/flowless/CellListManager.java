@@ -118,7 +118,7 @@ final class CellListManager<T, C extends Cell<T, ?>> {
      * and push them ourselves directly to the given owner.
      */
     private void pushScrollEvent(ScrollEvent se) {
-        Logger.getGlobal().fine(() -> se.toString());
+        Logger.getGlobal().fine(se::toString);
         owner.fireEvent(se);
         se.consume();
     }
